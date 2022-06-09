@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import Bell from "./components/Bell";
 import Contact from "./components/Contact";
@@ -18,6 +18,10 @@ function App() {
 
   let [food, setFood] = useState(Data)
   let [newFood, setNewFood] = useState(food)
+
+  useEffect(() => {
+    setNewFood(food)
+  }, [food])
 
   //save
   let [save, setSave] = useState([])
